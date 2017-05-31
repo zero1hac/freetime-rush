@@ -102,3 +102,4 @@ ENV/
 
 #Data folders
 TorchExperiments/data/
+SentimentAnalysis/imdb.pkl
