@@ -211,6 +211,19 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         return true;
     }
 
+
+    public void openLocationMap(String locationName){
+        Uri geoLocation = Uri.parse("geo:0,0?q=" + locationName);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+
+        intent.setData(geoLocation);
+
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivity(intent);
+        }else{
+            Log.d(TAG, "No app installed for showing map");
+        }
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -221,7 +234,11 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             return true;
         }
 
-        // TODO (2) Launch the map when the map menu item is clicked
+        // COMPLETED (2) Launch the map when the map menu item is clicked
+        if(id == R.id.action_map){
+            openLocationMap("NavSheel Dham Kanpur");
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
