@@ -1,0 +1,10 @@
+[package]
+name = "sample_project"
+version = "0.1.0"
+authors = ["Dushyant <6dushyantmishra20101@gmail.com>"]
+
+[dependencies]
+getopts = "~0.2.14"
+num = "~0.1.36"
+permutohedron = "~0.2.2"
+primal = "~0.2.3"
